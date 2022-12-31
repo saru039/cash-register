@@ -18,11 +18,13 @@ function checkCashRegister(price, cash, cid) {
  acc[curr[0]] = curr[1];
  return acc;
  }, {total: 0});
+/*equal to the total*/
  if(register.total === change) {
  output.status = 'CLOSED';
  output.change = cid;
  return output;
  }
+/*amount is more than total*/
  if(register.total < change) {
  output.status = 'INSUFFICIENT_FUNDS';
  return output;
